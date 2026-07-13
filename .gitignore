@@ -19,3 +19,10 @@ env/
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Activity datasets
+Medicine-analysis/Medicine.csv
+Medicine-analysis/cleaned_medicine_inventory.csv
+
+# Don't push any csv files
+*.csv
