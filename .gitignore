@@ -26,3 +26,10 @@ Medicine-analysis/cleaned_medicine_inventory.csv
 
 # Don't push any csv files
 *.csv
+
+# Titanic Survival Analysis Data
+titanic-survival-analysis/data/raw/*
+!titanic-survival-analysis/data/raw/.gitkeep
+
+titanic-survival-analysis/data/processed/*
+!titanic-survival-analysis/data/processed/.gitkeep
