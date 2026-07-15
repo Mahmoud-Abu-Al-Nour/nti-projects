@@ -1,44 +1,64 @@
 # Titanic Survival Data Analysis
 
-A data preparation and exploratory analysis project using the Titanic dataset and Pandas.
+A practical data analysis project using the Titanic dataset to apply data preparation, statistical analysis, outlier detection, and data visualization techniques.
 
 ## Project Overview
 
-This project demonstrates a practical data analysis workflow on raw Titanic passenger data.
+This project demonstrates an end-to-end data analysis workflow using Python and Pandas.
 
-The analysis focuses on exploring the dataset, selecting relevant features, filtering records, handling missing values, creating new features, detecting duplicate records, and analyzing passenger survival patterns.
+The project starts with raw Titanic passenger data, performs data cleaning and feature engineering, and then applies statistical and visual analysis to understand passenger characteristics and survival patterns.
 
 ## Project Workflow
 
-The project covers:
+The project is divided into two main stages:
 
-1. Dataset exploration
-2. Column selection
-3. Boolean filtering
-4. Data sorting
-5. Age group feature creation
-6. Missing value handling
-7. Duplicate detection and removal
-8. Survival rate analysis using GroupBy
-9. Survival analysis using Pivot Tables
-10. Passenger title extraction and analysis
-11. Cleaned dataset export
+### 1. Data Preparation and Analysis
+
+- Dataset exploration
+- Column selection
+- Boolean filtering
+- Data sorting
+- Missing value handling
+- Duplicate detection and removal
+- Age group feature creation
+- Passenger title extraction
+- GroupBy analysis
+- Pivot table analysis
+- Cleaned dataset export
+
+### 2. Statistical Analysis and Visualization
+
+- Mean, median, and mode analysis
+- Standard deviation and grouped variability
+- Five-number summary
+- Interquartile range (IQR)
+- IQR-based outlier detection
+- Z-score outlier detection
+- Distribution analysis
+- Histograms and KDE
+- Box plots
+- Count plots
+- Scatter plots
+- Multi-chart statistical dashboard
+- Visual insight interpretation
 
 ## Data Cleaning
 
-Missing values are handled using different strategies based on the characteristics of each feature:
+Missing values are handled using feature-specific strategies:
 
-- `Age` — Missing values are filled using the median age.
-- `Cabin` — Missing values are labeled as `Unknown`.
-- `Embarked` — Missing values are filled using the most frequent value.
+- `Age` — filled using the median.
+- `Cabin` — labeled as `Unknown`.
+- `Embarked` — filled using the mode.
 
-Duplicate rows are also checked and removed when necessary.
+Duplicate records are also detected and removed when necessary.
 
 ## Feature Engineering
 
+Two additional features are created during data preparation:
+
 ### Age Group
 
-Passenger ages are categorized into:
+Passengers are categorized into:
 
 - Child
 - Teen
@@ -49,17 +69,30 @@ Passenger ages are categorized into:
 
 Passenger titles such as `Mr`, `Mrs`, and `Miss` are extracted from the `Name` column using regular expressions.
 
-These features provide additional information for survival analysis.
+## Statistical Analysis
 
-## Survival Analysis
+The project analyzes the central tendency and spread of passenger fares using:
 
-Survival rates are analyzed based on:
+- Mean
+- Median
+- Mode
+- Standard deviation
+- Quartiles
+- Interquartile range
 
-- Passenger sex
-- Passenger class
-- Passenger title
+Fare outliers are detected using both the IQR and Z-score methods.
 
-GroupBy operations and pivot tables are used to compare survival patterns across passenger groups.
+## Data Visualization
+
+The project uses statistical visualizations to analyze:
+
+- Passenger age distribution
+- Fare distribution
+- Fare variability by passenger class
+- Passenger survival counts
+- The relationship between age, fare, and survival
+
+A 2×2 dashboard combines multiple visualizations for comparative analysis.
 
 ## Project Structure
 
@@ -67,15 +100,19 @@ GroupBy operations and pivot tables are used to compare survival patterns across
 titanic-survival-analysis/
 ├── data/
 │   ├── raw/
+│   │   └── .gitkeep
 │   └── processed/
+│       └── .gitkeep
 ├── notebooks/
-│   └── titanic_data_preparation.ipynb
+│   ├── titanic_data_preparation.ipynb
+│   └── titanic_statistics_visualization.ipynb
 ├── src/
+│   └── .gitkeep
 ├── README.md
 └── requirements.txt
 ```
 
-The raw and processed datasets are excluded from the repository.
+Raw and processed datasets are excluded from the repository.
 
 ## Technologies
 
@@ -83,11 +120,13 @@ The raw and processed datasets are excluded from the repository.
 - Pandas
 - NumPy
 - Matplotlib
+- Seaborn
+- SciPy
 - Jupyter Notebook
 
 ## Installation
 
-Create and activate a virtual environment, then install the project dependencies:
+Install the project dependencies using:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -95,30 +134,26 @@ python -m pip install -r requirements.txt
 
 ## Running the Project
 
-Open the notebook located in:
+Run the notebooks in the following order:
 
 ```text
-notebooks/titanic_data_preparation.ipynb
+1. notebooks/titanic_data_preparation.ipynb
+2. notebooks/titanic_statistics_visualization.ipynb
 ```
 
-Run all notebook cells from top to bottom.
+The first notebook prepares and cleans the raw dataset.
 
-The cleaned dataset is generated inside:
-
-```text
-data/processed/
-```
+The second notebook applies statistical analysis and data visualization techniques.
 
 ## Skills Practiced
 
-- Data exploration
-- Data selection
-- Boolean filtering
-- Data sorting
-- Missing value imputation
+- Data cleaning
+- Data preprocessing
 - Feature engineering
-- Regular expressions
-- Duplicate handling
+- Descriptive statistics
+- Outlier detection
 - GroupBy operations
 - Pivot tables
-- Data export
+- Statistical interpretation
+- Data visualization
+- Visual insight extraction
