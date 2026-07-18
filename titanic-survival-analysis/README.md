@@ -1,18 +1,22 @@
 # Titanic Survival Data Analysis
 
-A practical data analysis project using the Titanic dataset to apply data preparation, statistical analysis, outlier detection, and data visualization techniques.
+A practical data analysis project using the Titanic dataset to apply data preparation, preprocessing, feature engineering, statistical analysis, outlier detection, and data visualization techniques.
+
+---
 
 ## Project Overview
 
-This project demonstrates an end-to-end data analysis workflow using Python and Pandas.
+This project demonstrates a complete end-to-end data analysis workflow using Python and the Titanic dataset.
 
-The project starts with raw Titanic passenger data, performs data cleaning and feature engineering, and then applies statistical and visual analysis to understand passenger characteristics and survival patterns.
+Starting from the raw dataset, the project walks through data assessment, cleaning, preprocessing, exploratory data analysis (EDA), feature engineering, and statistical visualization. The prepared dataset will serve as the foundation for future machine learning models.
 
-## Project Workflow
+---
 
-The project is divided into two main stages:
+# Project Workflow
 
-### 1. Data Preparation and Analysis
+The project is organized into three stages.
+
+## 1. Data Preparation and Analysis
 
 - Dataset exploration
 - Column selection
@@ -26,7 +30,9 @@ The project is divided into two main stages:
 - Pivot table analysis
 - Cleaned dataset export
 
-### 2. Statistical Analysis and Visualization
+---
+
+## 2. Statistical Analysis and Visualization
 
 - Mean, median, and mode analysis
 - Standard deviation and grouped variability
@@ -42,21 +48,79 @@ The project is divided into two main stages:
 - Multi-chart statistical dashboard
 - Visual insight interpretation
 
-## Data Cleaning
+---
 
-Missing values are handled using feature-specific strategies:
+## 3. End-to-End Data Science Workflow
 
-- `Age` — filled using the median.
-- `Cabin` — labeled as `Unknown`.
-- `Embarked` — filled using the mode.
+This stage simulates a real-world data science workflow starting from the original raw dataset.
 
-Duplicate records are also detected and removed when necessary.
+### Data Assessment
 
-## Feature Engineering
+- Dataset inspection
+- Shape and information summary
+- Missing value analysis
+- Duplicate detection
+- Unique value inspection
+- Outlier identification
 
-Two additional features are created during data preparation:
+### Data Cleaning
 
-### Age Group
+- Missing value imputation
+- Duplicate removal
+- Data type optimization
+- Fare outlier handling using the IQR method
+
+### Data Preparation
+
+- Label Encoding
+- One-Hot Encoding
+- Feature Scaling using StandardScaler
+
+### Exploratory Data Analysis (EDA)
+
+- Age distribution
+- Survival analysis
+- Correlation heatmap
+- Feature relationships
+
+### Feature Engineering
+
+New features created:
+
+- FamilySize
+- IsAlone
+- AgeGroup
+
+### Reflection
+
+The workflow concludes with observations about:
+
+- Data quality
+- Cleaning decisions
+- Engineered features
+- Important insights discovered during EDA
+
+---
+
+# Data Cleaning
+
+Missing values are handled using feature-specific strategies.
+
+- `Age` → Median
+- `Cabin` → Unknown
+- `Embarked` → Mode
+
+Duplicate records are detected and removed when necessary.
+
+Fare outliers are handled using the IQR method.
+
+---
+
+# Feature Engineering
+
+The project creates several useful features.
+
+## Age Group
 
 Passengers are categorized into:
 
@@ -65,95 +129,155 @@ Passengers are categorized into:
 - Adult
 - Senior
 
-### Passenger Title
+## Passenger Title
 
-Passenger titles such as `Mr`, `Mrs`, and `Miss` are extracted from the `Name` column using regular expressions.
+Passenger titles such as:
 
-## Statistical Analysis
+- Mr
+- Mrs
+- Miss
+- Master
 
-The project analyzes the central tendency and spread of passenger fares using:
+are extracted from the `Name` column using regular expressions.
+
+## Family Size
+
+```text
+FamilySize = SibSp + Parch + 1
+```
+
+## Is Alone
+
+Binary feature indicating whether a passenger traveled alone.
+
+---
+
+# Statistical Analysis
+
+The project analyzes passenger characteristics using:
 
 - Mean
 - Median
 - Mode
 - Standard deviation
 - Quartiles
-- Interquartile range
+- Interquartile Range (IQR)
 
-Fare outliers are detected using both the IQR and Z-score methods.
+Outliers are detected using:
 
-## Data Visualization
+- IQR Method
+- Z-Score Method
 
-The project uses statistical visualizations to analyze:
+---
+
+# Data Visualization
+
+Visualizations include:
 
 - Passenger age distribution
 - Fare distribution
 - Fare variability by passenger class
 - Passenger survival counts
-- The relationship between age, fare, and survival
+- Correlation heatmap
+- Scatter plots
+- Count plots
+- Histograms
+- KDE plots
+- Box plots
+- Multi-chart dashboard
 
-A 2×2 dashboard combines multiple visualizations for comparative analysis.
+---
 
-## Project Structure
+# Project Structure
 
 ```text
 titanic-survival-analysis/
+│
 ├── data/
 │   ├── raw/
 │   │   └── .gitkeep
 │   └── processed/
 │       └── .gitkeep
+│
 ├── notebooks/
 │   ├── titanic_data_preparation.ipynb
-│   └── titanic_statistics_visualization.ipynb
+│   ├── titanic_statistics_visualization.ipynb
+│   └── titanic_end_to_end_workflow.ipynb
+│
 ├── src/
 │   └── .gitkeep
+│
 ├── README.md
 └── requirements.txt
 ```
 
 Raw and processed datasets are excluded from the repository.
 
-## Technologies
+---
+
+# Technologies
 
 - Python
 - Pandas
 - NumPy
 - Matplotlib
 - Seaborn
+- Scikit-Learn
 - SciPy
 - Jupyter Notebook
 
-## Installation
+---
 
-Install the project dependencies using:
+# Installation
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-## Running the Project
+---
+
+# Running the Project
 
 Run the notebooks in the following order:
 
 ```text
-1. notebooks/titanic_data_preparation.ipynb
-2. notebooks/titanic_statistics_visualization.ipynb
+1. titanic_data_preparation.ipynb
+2. titanic_statistics_visualization.ipynb
+3. titanic_end_to_end_workflow.ipynb
 ```
 
-The first notebook prepares and cleans the raw dataset.
+---
 
-The second notebook applies statistical analysis and data visualization techniques.
+# Skills Practiced
 
-## Skills Practiced
+- Data Assessment
+- Data Cleaning
+- Data Preprocessing
+- Feature Engineering
+- Missing Value Handling
+- Encoding Techniques
+- Feature Scaling
+- Exploratory Data Analysis (EDA)
+- Descriptive Statistics
+- Outlier Detection
+- GroupBy Operations
+- Pivot Tables
+- Correlation Analysis
+- Data Visualization
+- Statistical Interpretation
+- End-to-End Data Science Workflow
 
-- Data cleaning
-- Data preprocessing
-- Feature engineering
-- Descriptive statistics
-- Outlier detection
-- GroupBy operations
-- Pivot tables
-- Statistical interpretation
-- Data visualization
-- Visual insight extraction
+---
+
+# Future Work
+
+The next stage of this project will focus on building machine learning models using the prepared dataset.
+
+Planned topics include:
+
+- Train/Test Split
+- Classification Models
+- Model Evaluation
+- Hyperparameter Tuning
+- Model Comparison
+- Feature Importance
