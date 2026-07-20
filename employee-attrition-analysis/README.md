@@ -1,33 +1,51 @@
 # Employee Attrition Analysis
 
-> A complete Business Data Analytics project that investigates employee attrition using the IBM HR Analytics Employee Attrition dataset. This project follows the full analytics lifecycle—from understanding the business problem to delivering actionable business recommendations for Human Resources management.
+> An end-to-end HR Analytics project that explores employee attrition using the IBM HR Analytics Employee Attrition dataset. The project follows the complete data analytics pipeline—from business understanding and data quality assessment to feature engineering, exploratory data analysis (EDA), and feature selection—to generate actionable insights for Human Resources decision-making.
+
+---
+
+# Table of Contents
+
+- Business Scenario
+- Business Objectives
+- Business Questions
+- Dataset
+- Project Workflow
+- Project Structure
+- Technologies
+- Generated Datasets
+- Current Project Status
+- Deliverables
+- Expected Business Value
+- Future Improvements
+- Author
 
 ---
 
 # Business Scenario
 
-Employee attrition is one of the most significant challenges facing organizations. High turnover leads to increased recruitment costs, loss of organizational knowledge, reduced productivity, and lower employee morale.
+Employee attrition is one of the most significant challenges facing organizations. High turnover increases recruitment costs, reduces productivity, causes knowledge loss, and negatively impacts employee morale.
 
-As a Data Analyst in IBM's Human Resources department, the objective is to analyze employee data to identify the key factors contributing to employee attrition and provide data-driven recommendations to improve employee retention.
+As a Data Analyst in IBM's Human Resources department, the objective is to analyze employee data, identify the factors contributing to employee attrition, and provide actionable recommendations that help HR improve employee retention.
 
 ---
 
 # Business Objectives
 
-The primary objectives of this project are:
+The primary objectives of this project are to:
 
 - Understand employee attrition patterns.
-- Identify the factors influencing employee turnover.
+- Identify the main drivers of employee turnover.
 - Discover meaningful relationships between employee characteristics and attrition.
 - Generate business insights from HR data.
-- Recommend actionable strategies to improve employee retention.
-- Support HR decision-making through data analysis.
+- Support evidence-based HR decision-making.
+- Recommend practical strategies to improve employee retention.
 
 ---
 
 # Business Questions
 
-This analysis aims to answer several business questions, including:
+This project investigates several key business questions, including:
 
 - Which employees are most likely to leave the company?
 - Does overtime increase employee attrition?
@@ -38,13 +56,13 @@ This analysis aims to answer several business questions, including:
 - Are promotions associated with lower attrition?
 - Does work-life balance influence employee retention?
 
-Additional business questions may emerge throughout the exploratory analysis.
+Additional business questions emerged during the exploratory data analysis.
 
 ---
 
 # Dataset
 
-**Dataset Name**
+### Dataset Name
 
 IBM HR Analytics Employee Attrition & Performance
 
@@ -54,8 +72,8 @@ The dataset contains employee demographic information, work-related attributes, 
 
 **Attrition**
 
-- Yes → Employee left the company.
-- No → Employee stayed with the company.
+- Yes → Employee left the company
+- No → Employee stayed with the company
 
 All analyses, hypotheses, and recommendations are centered around this target variable.
 
@@ -87,91 +105,80 @@ The project follows a structured Business Analytics workflow.
 
 ## Phase 3 — Data Quality Assessment
 
-The dataset will be evaluated for:
-
 - Missing Values
 - Duplicate Records
 - Duplicate Employee IDs
-- Incorrect Data Types
 - Invalid Values
 - Inconsistent Values
 - Constant Features
-- High Missing Columns
-- Outliers
+- Outlier Detection
+- Data Validation
 
 ---
 
 ## Phase 4 — Data Cleaning
 
-Cleaning tasks include:
-
-- Handling missing values
-- Removing duplicate records
-- Correcting data types
-- Removing constant features
-- Handling outliers
-- Resolving inconsistent values
+- Missing Value Treatment
+- Duplicate Removal
+- Data Standardization
+- Constant Feature Removal
+- Outlier Handling
+- Data Validation
 
 ---
 
-## Phase 5 — Exploratory Data Analysis (EDA)
+## Phase 5 — Feature Engineering
 
-For each business question, the project follows a consistent analytical framework:
-
-1. Business Question
-2. Hypothesis
-3. Variables
-4. Visualization
-5. Observation
-6. Interpretation
-7. Business Insight
-8. Recommendation
-
----
-
-## Phase 6 — Feature Engineering
-
-Several business-driven features will be created, including:
+Business-driven features were created to improve analytical value, including:
 
 - Income per Working Year
 - Promotion Rate
 - Experience Level
-- Employee Tenure Groups
+- Employee Tenure Group
 - High Income Indicator
-- Satisfaction Score
-- Overtime Risk
-- Career Stage
-- Income Category
-
-Each engineered feature is created with a clear business rationale.
 
 ---
 
-## Phase 7 — Executive Summary
+## Phase 6 — Data Preparation
 
-A concise summary prepared for non-technical stakeholders highlighting:
-
-- Business context
-- Key findings
-- Recommendations
-- Expected business impact
+- Categorical Encoding
+- Feature Scaling
 
 ---
 
-## Phase 8 — Final Business Report
+## Phase 7 — Exploratory Data Analysis (EDA)
 
-The final report includes:
+Each business question follows a consistent analytical framework:
 
-1. Business Problem
-2. Dataset Overview
-3. Data Quality Assessment
-4. Data Cleaning Summary
-5. Exploratory Data Analysis
-6. Feature Engineering
-7. Business Insights
-8. Business Recommendations
-9. Executive Summary
-10. Appendix
+1. Business Question
+2. Hypothesis
+3. Visualization
+4. Observation
+5. Interpretation
+6. Business Insight
+7. Recommendation
+
+---
+
+## Phase 8 — Feature Selection
+
+Three complementary feature selection techniques were applied:
+
+- Pearson Correlation
+- Chi-Square Test
+- Mutual Information
+
+---
+
+## Phase 9 — Machine Learning *(Coming Soon)*
+
+The next stage will include:
+
+- Train/Test Split
+- Classification Models
+- Model Evaluation
+- Model Comparison
+- Business Recommendations
 
 ---
 
@@ -188,17 +195,10 @@ employee-attrition-analysis/
 │   ├── 01_business_understanding.ipynb
 │   ├── 02_data_quality_assessment.ipynb
 │   ├── 03_data_cleaning.ipynb
-│   ├── 04_exploratory_data_analysis.ipynb
-│   ├── 05_feature_engineering.ipynb
-│   └── 06_executive_summary.ipynb
+│   ├── 04_feature_engineering_and_eda.ipynb
+│   └── 05_machine_learning.ipynb (Coming Soon)
 │
 ├── reports/
-│   ├── Executive_Summary.pdf
-│   └── Final_Business_Report.pdf
-│
-├── images/
-│
-├── src/
 │
 ├── README.md
 ├── requirements.txt
@@ -215,28 +215,53 @@ employee-attrition-analysis/
 - Matplotlib
 - Seaborn
 - SciPy
+- Scikit-learn
 - Jupyter Notebook
-- Scikit-learn (optional for future modeling)
+- Git
+- GitHub
+
+---
+
+# Generated Datasets
+
+| Dataset | Description |
+|----------|-------------|
+| **employee_attrition_cleaned.csv** | Cleaned dataset after data cleaning and feature engineering. |
+| **employee_attrition_features_selected.csv** | Final dataset containing the selected features and the target variable, ready for machine learning. |
 
 ---
 
 # Deliverables
 
-The final project will include:
+The project currently includes:
 
-- Clean Dataset
-- Data Analysis Notebook
-- Engineered Features
+- Cleaned Dataset
+- Feature-Selected Dataset
+- Business Analysis Notebooks
+- Feature Engineering
+- Exploratory Data Analysis
+- Feature Selection
 - Business Insights
-- Business Recommendations
-- Executive Summary
-- Final Business Report
+- HR Recommendations
+
+---
+
+# Key Project Highlights
+
+- Identified and resolved **13 data quality issues**.
+- Engineered **five business-driven features**.
+- Answered multiple HR business questions using EDA.
+- Applied three feature selection techniques:
+  - Pearson Correlation
+  - Chi-Square Test
+  - Mutual Information
+- Generated a machine-learning-ready dataset for future modeling.
 
 ---
 
 # Expected Business Value
 
-The insights generated from this project will help Human Resources teams:
+The insights generated from this project help Human Resources teams:
 
 - Reduce employee turnover.
 - Improve employee satisfaction.
@@ -249,13 +274,14 @@ The insights generated from this project will help Human Resources teams:
 
 # Future Improvements
 
-Potential future extensions include:
+The next phase of this project will include:
 
 - Employee Attrition Prediction using Machine Learning
-- Interactive HR Dashboard using Power BI or Tableau
-- Employee Risk Scoring System
+- Hyperparameter Tuning
+- Explainable AI (SHAP / LIME)
+- Interactive Power BI Dashboard
+- Employee Attrition Risk Prediction API
 - HR Decision Support Dashboard
-- Explainable AI (XAI) for Attrition Prediction
 
 ---
 
@@ -263,6 +289,6 @@ Potential future extensions include:
 
 **Mahmoud Abu Al-Nour**
 
-Computer Science Student | Data Analyst | AI Engineer
+AI Engineer| Data science
 
 GitHub: https://github.com/Mahmoud-Abu-Al-Nour
